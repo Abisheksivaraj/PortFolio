@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Triangles&display=swap') */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap"); */
+
+body {
+  background-color: #021024;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:not(:placeholder-shown) ~ .input-text{
+  @apply text-white transform -translate-y-10 -translate-x-2 scale-75;
+}
+
+input[type="mail"]:focus ~ .input-text,
+input[type="mail"]:not(:placeholder-shown) ~ .input-text{
+  @apply text-white transform -translate-y-10 -translate-x-2 scale-75;
+}
