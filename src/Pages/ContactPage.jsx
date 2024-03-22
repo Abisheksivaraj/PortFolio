@@ -1,63 +1,74 @@
-import React from "react";
-import "../index.css";
+import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
-import { LiaTelegram } from "react-icons/lia";
+import Footer from "../Components/Footer";
+import { AiOutlineMail } from "react-icons/ai";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7b9mee7",
+        "template_x158n5j",
+        form.current,
+        "d8azs-tDNWlJdvKa_UdBF"
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className="p-6 ">
-        <p className="text-white text-center text-[2rem] font-serif ">
+      <Navbar />
+      <div className="p-6">
+        <p className="text-white text-center text-2xl font-serif">
           Let's create something Together 🤝
         </p>
       </div>
-
-      <div className="flex items-center justify-center ">
-        <label className="relative cursor-pointer ml-1">
+      <form ref={form} className="flex flex-col items-center">
+        <label className="relative cursor-pointer mt-4">
           <input
             type="text"
-            placeholder="Input"
-            className="h-18 w-[20rem] md:w-[32rem] px-6 text-4xl text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-0 transition duration-200"
+            placeholder="Name"
+            name="Name"
+            className="h-10 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
           />
-          <span className="text-4xl text-white text-opacity-80 bg-[#021024] absolute left-5 top-5 px-1 transition duration-200 input-text font-serif">
-            Name
-          </span>
         </label>
-      </div>
-
-      <div className="flex items-center justify-center mt-14">
-        <label className="relative cursor-pointer ml-1">
+        <label className="relative cursor-pointer mt-4">
           <input
-            type="mail"
-            placeholder="Input"
-            className="h-18 w-[20rem] md:w-[32rem] px-6 text-4xl text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-0 transition duration-200"
+            type="email"
+            name="Email"
+            placeholder="Email"
+            className="h-10 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
           />
-          <span className="text-4xl text-white text-opacity-80 bg-[#021024] absolute left-5 top-5 px-1 transition duration-200 input-text font-serif">
-            Mail
-          </span>
         </label>
-      </div>
-
-      <div className="flex items-center justify-center">
-        <label className="relative cursor-pointer ml-1">
+        <label className="relative cursor-pointer mt-4">
           <textarea
-            className="m-14 text-4xl w-[19rem] md:w-[32rem] text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 "
-            name="freeform"
-            rows="5"
-            cols="15"
+            name="Message..."
+            className="mt-4 h-40 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
             placeholder="Message..."
           ></textarea>
         </label>
-        <div className="text-white flex items-center justify-center text-center relative ">
-          <button className="flex items-center text-2xl top-[8rem] right-[9rem] absolute md:right-[16rem]  md:top-15 h-[3rem] w-[8rem] bg-[#021024] border border-white  rounded-xl p-5">
-            <LiaTelegram />
-            Send
-          </button>
-        </div>
-      </div>
+        <button
+          onSubmit={sendEmail}
+          className="mt-4 h-12 w-32 md:w-40 bg-[#021024] text-white border border-white rounded-lg p-2 flex items-center justify-center"
+          type="submit"
+        >
+          <AiOutlineMail className="mr-2" />
+          Send
+        </button>
+      </form>
+      <Footer />
     </div>
   );
 };
