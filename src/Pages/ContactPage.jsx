@@ -15,7 +15,7 @@ const ContactPage = () => {
         "service_7b9mee7",
         "template_x158n5j",
         form.current,
-        "d8azs-tDNWlJdvKa_UdBF"
+        "I5aRRzj0TSG9gDkZt"
       )
       .then(
         () => {
@@ -40,21 +40,21 @@ const ContactPage = () => {
           <input
             type="text"
             placeholder="Name"
-            name="Name"
+            name="from_name"
             className="h-10 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
           />
         </label>
         <label className="relative cursor-pointer mt-4">
           <input
             type="email"
-            name="Email"
+            name="from_email"
             placeholder="Email"
             className="h-10 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
           />
         </label>
         <label className="relative cursor-pointer mt-4">
           <textarea
-            name="Message..."
+            name="message"
             className="mt-4 h-40 w-48 md:w-80 px-4 text-lg text-white bg-[#021024] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-white placeholder-gray-300 placeholder-opacity-50 transition duration-200"
             placeholder="Message..."
           ></textarea>
