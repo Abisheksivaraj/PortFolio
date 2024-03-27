@@ -1,37 +1,47 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { RxDotFilled } from "react-icons/rx";
-import Navbar from "../Components/Navbar";
+// import Navbar from "../Components/Navbar";
 import Aboutimg from "../assets/aboutimg.jpeg";
 
 const About = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div>
-        <Navbar />
-      </div>
-      <div>
-        <h1 className="text-white text-[2rem] text-center font-semibold">
+        <h1 className="text-white text-[2rem] text-center font-semibold underline-offset-4">
           About Me
         </h1>
-        <hr className=" w-[10.5rem] ml-[6rem] md:ml-[20.5rem] " />
       </div>
 
-      <div className="p-6 md:flex md:flex-row mt-10">
-        <div>
+      <motion.div className="p-6 md:flex md:flex-row  xl:ml-[13rem] ml-[2rem] ">
+        <motion.div
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <img
             src={Aboutimg}
             alt=""
-            className="w-[20rem] md:w-[25rem] h-[40rem]"
+            className="w-[20rem] md:w-[25rem] h-[40rem] rounded-tl-lg md:rounded-bl-lg rounded-tr-lg"
           />
-        </div>
+        </motion.div>
 
-        <div className="w-[19.5rem] md:w-[25rem] bg-slate-50 h-[40rem] p-5 relative">
+        <motion.div
+          initial={{ opacity: 0, x: 500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="w-[20rem] md:w-[27rem] bg-slate-50 h-[40rem] p-5 relative md:rounded-tr-lg rounded-br-lg rounded-bl-lg"
+        >
           <p className="w-[18rem] font-normal text-[16px] md:text-[20px] md:w-[22rem]">
             Full Stack Web Developer with background knowledge of Mern stacks
             with redux,along with a knack of building websites with utmost
             efficiency
           </p>
-          <div className="absolute top-[15rem] md:text-[20px]">
+          <motion.div className="absolute top-[12rem] md:text-[20px]">
             <h1 className="w-[18rem] font-semibold text-[16px] md:text-[20px]">
               Here are a few Highlights:
             </h1>
@@ -57,12 +67,17 @@ const About = () => {
                 <span>Building API</span>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <ul className="absolute top-[38rem] md:top-[36rem]  text-[1rem] flex flex-row items-start md:flex-row  gap-2">
+          <motion.div>
+            <ul className="absolute top-[33rem] md:top-[36rem]  text-[1rem] flex flex-row items-start md:flex-row  gap-10">
               <li>
-                <button className=" flex items-center justify-center font-semibold h-10 w-[7rem] rounded-lg text-white bg-black">
+                <motion.button
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  className="flex items-center justify-center font-semibold h-10 w-[7rem] rounded-lg text-white bg-black"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -78,10 +93,15 @@ const About = () => {
                     />
                   </svg>
                   Hire Me
-                </button>
+                </motion.button>
               </li>
               <li>
-                <button className="flex items-center justify-center font-semibold h-10 w-[10rem] text-white rounded-lg bg-black">
+                <motion.button
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  className="flex items-center justify-center font-semibold h-10 md:w-[10rem] w-[8rem] text-white rounded-lg bg-black "
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -97,13 +117,13 @@ const About = () => {
                     />
                   </svg>
                   Resume
-                </button>
+                </motion.button>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

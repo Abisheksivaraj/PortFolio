@@ -1,6 +1,7 @@
 import React from "react";
 import Port from "../assets/portimage.png";
 import Navbar from "../Components/Navbar";
+import About from "../Components/About";
 
 const Home = () => {
   return (
@@ -75,6 +76,10 @@ const Home = () => {
           />
         </div>
       </section>
+
+      {/* <div>
+        <About/>
+      </div> */}
     </div>
   );
 };
