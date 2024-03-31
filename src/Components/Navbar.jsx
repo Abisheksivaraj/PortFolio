@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className=" p-6 text-white">
+    <div className="text-white md:flex md:items-center md:ml-[-1rem]">
       <div className="flex items-center justify-between">
         <div>
           <h1 className=" text-[2rem] font-bold text-[orange]">PortFolio.</h1>
@@ -24,19 +25,28 @@ const Navbar = () => {
 
       <div className="">
         <ul
-          className={` absolute top-[5rem] right-[10rem] gap-5 font-normal text-18px md:text-[1.3rem] cursor-pointer p-2 h-auto flex flex-col md:flex  md:flex-row md:top-[1.5rem] md:gap-10 md:mr-[-8rem] z-10  ${
+          className={`inset-0 bg-opacity-100   font-bold justify-evenly items-center  xl:ml-[37rem] right-[1rem]  text-18px  cursor-pointer p-2  flex flex-col h-[50rem] w-[20rem] text-[navy] bg-white
+          
+          md:text-[1.3rem] md:font-normal  md:flex  md:flex-row md:gap-10  z-10   md:bg-inherit md:text-white md:h-1 ${
             isMenuVisible ? "" : "hidden"
           }`}
         >
-          <span className="hover:text-[#f98d2f] text-start">Home</span>
+          <Link to={"/Home"}>
+            <span className="hover:text-[#f98d2f] text-start">Home</span>
+          </Link>
 
           <span className="hover:text-#f98d2f flex flex-col justify-start items-start gap-1 relative group text-start md:relative">
-            <span className="flex justify-center items-center">AboutUs</span>
+            <Link to={"/About"}>
+              <span className="hover:text-#f98d2f flex flex-col justify-start items-start gap-1 relative group text-start md:relative">
+                AboutUs
+              </span>
+            </Link>
           </span>
-
-          <span className="hover:text-[#f98d2f] flex  justify-start items-center gap-1 relative group">
-            Skills
-          </span>
+          <Link to={"/Skills"}>
+            <span className="hover:text-[#f98d2f] flex  justify-start items-center gap-1 relative group">
+              Skills
+            </span>
+          </Link>
 
           <span className="hover:text-[#f98d2f] flex justify-start items-center gap-1 relative group">
             Projects

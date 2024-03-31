@@ -1,18 +1,25 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Portfolio from "./Pages/Portfolio";
 import About from "./Components/About";
-import ContactPage from "./Pages/ContactPage";
-import Footer from "./Components/Footer";
-// import Resume from "./Components/Resume";
-import Skills from "./Components/Skills";
 import Project from "./Components/Project";
-import Home from "./Pages/Home";
+import Skills from "./Components/Skills";
+import ContactPage from "./Components/ContactPage";
+import Home from "./Components/Home";
+
 
 const App = () => {
   return (
-    <div>
-      <Project />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Project" element={<Project />} />
+        <Route path="/Skills" element={<Skills />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

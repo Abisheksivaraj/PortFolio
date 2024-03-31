@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import project1 from "../assets/Projects/calculator.png";
 import project2 from "../assets/Projects/chatApp.png";
@@ -57,67 +58,84 @@ const Project = () => {
     },
   ];
   return (
-    <section id="projects" className="py-10 text-white">
-      <div className="text-center">
-        <h3 className="text-4xl font-semibold">
-          My <span className="text-cyan-600">Projects</span>
-        </h3>
-        <p className="text-gray-400 mt-3 text-lg">My awesome works</p>
-      </div>
-      <br />
-      <div className="flex max-w-6xl gap-6 px-5 mx-auto items-center relative">
-        <div className="lg:w-full w-full mt-4">
-          <Swiper
-            slidesPerView={1.2}
-            spaceBetween={20}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              375: {
-                slidesPerView: 1,
-              },
-              1000: {
-                slidesPerView: 3,
-              },
-            }}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination, Autoplay]}
+    <motion.div className=" relative ">
+      <motion.div
+        id="projects"
+        className=" text-white absolute md:top-[130rem] top-[240rem] p-8"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <h3 className="text-4xl font-semibold">
+            My <span className="md:mr-[23rem] xl:mr-[-4rem]">Projects</span>
+          </h3>
+          <p className="text-gray-400 mt-3 text-lg md:mr-[23rem] xl:mr-[-4rem]">
+            My awesome works
+          </p>
+        </motion.div>
+        <br />
+        <div className="flex max-w-6xl gap-6 px-5 mx-auto items-center relative ml-4">
+          <motion.div
+            initial={{ opacity: 0, x: -500 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="lg:w-full w-full mt-4"
           >
-            {projects.map((project_info, i) => (
-              <SwiperSlide key={i}>
-                <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
-                  <img src={project_info.img} alt="" className="rounded-lg" />
-                  <h3 className="text-xl my-4">{project_info.name}</h3>
-                  <div className="flex gap-3">
-                    <a
-                      href={project_info.github_link}
-                      target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
-                    >
-                      Github
-                    </a>
-                    <a
-                      href={project_info.live_link}
-                      target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
-                    >
-                      Live Demo
-                    </a>
+            <Swiper
+              slidesPerView={1.2}
+              spaceBetween={20}
+              breakpoints={{
+                768: {
+                  slidesPerView: 3,
+                },
+                325: {
+                  slidesPerView: 4,
+                },
+                1000: {
+                  slidesPerView: 3,
+                },
+              }}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination, Autoplay]}
+            >
+              {projects.map((project_info, i) => (
+                <SwiperSlide key={i}>
+                  <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
+                    <img src={project_info.img} alt="" className="rounded-lg" />
+                    <h3 className="text-xl my-4">{project_info.name}</h3>
+                    <div className="flex gap-3">
+                      <a
+                        href={project_info.github_link}
+                        target="_blank"
+                        className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      >
+                        Github
+                      </a>
+                      <a
+                        href={project_info.live_link}
+                        target="_blank"
+                        className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      >
+                        Live Demo
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.div>
   );
 };
 

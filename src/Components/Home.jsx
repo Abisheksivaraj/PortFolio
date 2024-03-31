@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Port from "../assets/portimage.png";
-import Navbar from "../Components/Navbar";
-import About from "../Components/About";
+import { motion } from "framer-motion";
 
 const Home = () => {
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (event.deltaY > 0) {
+        setIsSwiping(true);
+      } else {
+        setIsSwiping(false);
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-
-      <section className="p-16 text-white  relative">
-        <div className="w-full z-10 absolute top-[15rem] md:top-[8rem]">
+      <motion.div
+        className="p-16 text-white relative"
+        animate={{ opacity: isSwiping ? 0.5 : 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="w-full z-10 absolute top-[15rem] md:top-[8rem]"
+        >
           <span className="text-[2rem] ">Hello,</span> <br />
           <span className="text-[3rem] z-10 w-[20%]">
             I'm{" "}
@@ -66,20 +88,21 @@ const Home = () => {
               </button>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="absolute top-[1rem] md:top-0 md:ml-[25rem] xl:ml-[40rem]">
+        <motion.div
+          initial={{ opacity: 0, x: 500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute top-[1rem] md:top-0 md:ml-[25rem] xl:ml-[40rem]"
+        >
           <img
             src={Port}
             alt=""
             className="h-[47rem] w-[auto] md:h-[34rem] md:w-[50rem] xl:w-[55rem]"
           />
-        </div>
-      </section>
-
-      {/* <div>
-        <About/>
-      </div> */}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
