@@ -12,9 +12,10 @@ const About = () => {
       transition={{ duration: 0.5 }}
     >
       <div>
-        <h1 className="text-white text-[2rem] text-center font-semibold underline-offset-4">
-          About Me
-        </h1>
+        <h3 className="text-4xl font-semibold">
+          My <span className="text-gray-100">About Me</span>
+        </h3>
+        <p className="text-gray-400 mt-3 text-lg">My knowledge</p>
       </div>
 
       <motion.div className="p-6 md:flex md:flex-row  xl:ml-[13rem] ml-[2rem] ">

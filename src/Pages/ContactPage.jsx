@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { AiOutlineMail } from "react-icons/ai";
 import emailjs from "@emailjs/browser";
-
+import "../index.css";
 const ContactPage = () => {
   const form = useRef();
 
@@ -31,7 +31,7 @@ const ContactPage = () => {
     <div>
       <Navbar />
       <div className="p-6">
-        <p className="text-white text-center text-2xl font-serif">
+        <p className="text-4xl font-semibold text-gray-100 text-center">
           Let's create something Together 🤝
         </p>
       </div>
