@@ -10,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="text-white md:flex md:items-center md:ml-[-1rem]">
+    <div className="text-white md:flex md:items-center md:ml-[-1rem] p-10">
       <div className="flex items-center justify-between">
         <div>
           <h1 className=" text-[2rem] font-bold text-[orange]">PortFolio.</h1>

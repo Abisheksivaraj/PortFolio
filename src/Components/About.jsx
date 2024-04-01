@@ -28,7 +28,7 @@ const About = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute top-[55rem] text-center md:top-[32rem]"
+        className="absolute top-[55rem] text-center md:top-[33rem]"
       >
         <div>
           <h3 className="text-4xl font-semibold md:text-center">
@@ -44,7 +44,7 @@ const About = () => {
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="xl:ml-[8rem] ml-[1rem]"
+            className="xl:ml-[8rem] ml-[1rem] md:mt-10"
           >
             <img
               src={Aboutimg}
@@ -57,7 +57,7 @@ const About = () => {
             initial={{ opacity: 0, x: 500 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="w-[20rem] md:w-[27rem] xl:w-[30rem] ml-[1rem] md:ml-0 mr-8 bg-slate-50 h-[40rem] p-5 relative md:rounded-tr-lg rounded-br-lg rounded-bl-lg"
+            className="w-[20rem] md:mt-10 md:w-[27rem] xl:w-[30rem] ml-[1rem] md:ml-0 mr-8 bg-slate-50 h-[40rem] p-5 relative md:rounded-tr-lg rounded-br-lg rounded-bl-lg"
           >
             <p className="w-[18rem] font-normal text-[16px] md:text-[20px] md:w-[22rem]">
               Full Stack Web Developer with background knowledge of Mern stacks

@@ -7,16 +7,19 @@ import { motion } from "framer-motion";
 const Skills = () => {
   const skills = [
     {
+      name: "HTML5",
       logo: <IonIcon icon={logoHtml5} />,
       level: "Advance",
       count: 86,
     },
     {
+      name: "Css",
       logo: <IonIcon icon={logoCss3} />,
       level: "Expert",
       count: 90,
     },
     {
+      name: "Tailwind Css",
       logo: (
         <img src={TailwindCSSIcon} alt="Tailwind CSS" className="w-12 h-10" />
       ),
@@ -24,11 +27,13 @@ const Skills = () => {
       count: 90,
     },
     {
+      name: "JavaScript",
       logo: <IonIcon icon={logoJavascript} />,
       level: "Intermediate",
       count: 80,
     },
     {
+      name: "React",
       logo: <IonIcon icon={logoReact} />,
       level: "Intermediate",
       count: 80,
@@ -59,6 +64,7 @@ const Skills = () => {
                 key={i}
                 className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl"
               >
+                {/* <div className="Text-white text-center p-2">{skill.name}</div> */}
                 <div
                   style={{
                     background: `conic-gradient(rgb(8,145,170) ${skill.count}%,#ddd ${skill.count}%)`,
@@ -69,7 +75,7 @@ const Skills = () => {
                     {skill.logo}
                   </div>
                 </div>
-                <p className="text-xl mt-3">{skill.level}</p>
+                <p className="text-xl mt-3">{skill.name}</p>
               </div>
             ))}
           </motion.div>

@@ -61,7 +61,7 @@ const Project = () => {
     <motion.div className=" relative ">
       <motion.div
         id="projects"
-        className=" text-white absolute md:top-[130rem] top-[240rem] p-8"
+        className=" text-white absolute md:top-[150rem] xl:top-[130rem] top-[240rem] p-8"
       >
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -70,9 +70,9 @@ const Project = () => {
           className="text-center"
         >
           <h3 className="text-4xl font-semibold">
-            My <span className="md:mr-[23rem] xl:mr-[-4rem]">Projects</span>
+            My <span className="md:mr-[28rem] xl:mr-[4rem]">Projects</span>
           </h3>
-          <p className="text-gray-400 mt-3 text-lg md:mr-[23rem] xl:mr-[-4rem]">
+          <p className="text-gray-400 mt-3 text-lg md:mr-[28rem] xl:mr-[4rem]">
             My awesome works
           </p>
         </motion.div>

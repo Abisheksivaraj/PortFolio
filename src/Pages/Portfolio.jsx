@@ -9,7 +9,7 @@ import Project from "../Components/Project";
 import Home from "../Components/Home";
 const Portfolio = () => {
   return (
-    <div className="p-10">
+    <div className="">
       <Navbar />
       <Home />
       <About />
