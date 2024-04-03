@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IonIcon } from "@ionic/react";
 import { logoHtml5, logoCss3, logoJavascript, logoReact } from "ionicons/icons";
 import TailwindCSSIcon from "../assets/tail.png";
 import { motion } from "framer-motion";
 
 const Skills = () => {
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (event.deltaY > 0) {
+        setIsSwiping(true);
+      } else {
+        setIsSwiping(false);
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
+
   const skills = [
     {
       name: "HTML5",
@@ -41,12 +59,12 @@ const Skills = () => {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative p-16" id="Skills">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: isSwiping ? 0.5 : 1 }}
         transition={{ duration: 0.5 }}
-        className="p-10  absolute top-[143rem] md:top-[81rem]"
+        className=" ml-[-4rem]  absolute top-[121rem] md:top-[81rem]"
       >
         <div className="mt-8 text-gray-100 text-center">
           <h3 className="text-4xl font-semibold">
@@ -64,7 +82,6 @@ const Skills = () => {
                 key={i}
                 className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl"
               >
-                {/* <div className="Text-white text-center p-2">{skill.name}</div> */}
                 <div
                   style={{
                     background: `conic-gradient(rgb(8,145,170) ${skill.count}%,#ddd ${skill.count}%)`,

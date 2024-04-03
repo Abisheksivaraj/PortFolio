@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import project1 from "../assets/Projects/calculator.png";
@@ -13,6 +13,23 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 
 const Project = () => {
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (event.deltaY > 0) {
+        setIsSwiping(true);
+      } else {
+        setIsSwiping(false);
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
   const projects = [
     {
       img: project2,
@@ -54,25 +71,26 @@ const Project = () => {
       img: project4,
       name: "Image Slider",
       github_link: "https://github.com/Abisheksivaraj/image-slider",
-      live_link: "gant-fairy-cbdf6b.netlify.app",
+      live_link: "https://gant-fairy-cbdf6b.netlify.app/",
     },
   ];
   return (
-    <motion.div className=" relative ">
+    <motion.div className="relative p-16" id="Project">
       <motion.div
         id="projects"
-        className=" text-white absolute md:top-[150rem] xl:top-[130rem] top-[240rem] p-8"
+        className="text-white absolute md:top-[123rem] xl:top-[130rem] top-[205rem]"
       >
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: isSwiping ? 0.5 : 1 }}
           transition={{ duration: 0.5 }}
           className="text-center"
         >
           <h3 className="text-4xl font-semibold">
-            My <span className="md:mr-[28rem] xl:mr-[4rem]">Projects</span>
+            My{" "}
+            <span className="md:mr-[28rem] xl:mr-0 text-white">Projects</span>
           </h3>
-          <p className="text-gray-400 mt-3 text-lg md:mr-[28rem] xl:mr-[4rem]">
+          <p className="text-gray-400 mt-3 text-lg md:mr-[28rem] xl:mr-0">
             My awesome works
           </p>
         </motion.div>
@@ -82,7 +100,7 @@ const Project = () => {
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="lg:w-full w-full mt-4"
+            className="lg:w-full w-full mt-4  ml-[-4rem]"
           >
             <Swiper
               slidesPerView={1.2}

@@ -37,7 +37,10 @@ const ContactPage = () => {
   };
 
   return (
-    <motion.div className="absolute top-[282rem] md:top-[195rem] xl:top-[175rem] xl:ml-[11rem]">
+    <motion.div
+      className="p-16 absolute top-[251rem] md:top-[172rem] xl:top-[175rem] xl:ml-[14rem]"
+      id="Contact"
+    >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -88,30 +91,30 @@ const ContactPage = () => {
         </form>
 
         <motion.div className="">
-          <ul className="text-white flex flex-col md:flex-row items-center justify-center gap-[5rem] ml-2 md:ml-[2rem] md:mt-[6rem]">
+          <ul className="text-white flex flex-col md:flex-row items-center justify-center gap-[5rem] ml-2 md:ml-[2rem] mt-10 md:mt-[4rem]">
             <li>
               <a href="">
-                <FaFacebookF className="h-[4rem] w-[4rem] hover:text-[#f98d2f]" />
+                <FaFacebookF className="h-[2.5rem] w-[2.5rem] hover:text-[#f98d2f]" />
               </a>
             </li>
             <li>
-              <a href="">
-                <FaTwitter className="h-[4rem] w-[4rem] hover:text-[#f98d2f]" />
+              <a href="https://x.com/Abishek_2601?t=mgUDd_xMIzprwKOzyrD8yg&s=09">
+                <FaTwitter className="h-[2.5rem] w-[2.5rem] hover:text-[#f98d2f]" />
               </a>
             </li>
             <li>
-              <a href="">
-                <FaInstagram className="h-[4rem] w-[4rem] hover:text-[#f98d2f]" />
+              <a href="https://www.instagram.com/p_r_i_n_c_e.26?igsh=MTRjdWNtZnFrNXk4Zw==">
+                <FaInstagram className="h-[2.5rem] w-[2.5rem] hover:text-[#f98d2f]" />
               </a>
             </li>
             <li>
-              <a href="">
-                <FaLinkedinIn className="h-[4rem] w-[4rem] hover:text-[#f98d2f]" />
+              <a href="www.linkedin.com/in/abishek-sivaraj-9b0092272">
+                <FaLinkedinIn className="h-[2.5rem] w-[2.5rem] hover:text-[#f98d2f]" />
               </a>
             </li>
             <li>
-              <a href="">
-                <FaGithub className="h-[4rem] w-[4rem] hover:text-[#f98d2f]" />
+              <a href="https://github.com/Abisheksivaraj">
+                <FaGithub className="h-[2.5rem] w-[2.5rem] hover:text-[#f98d2f]" />
               </a>
             </li>
           </ul>
