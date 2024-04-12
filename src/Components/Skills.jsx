@@ -64,7 +64,7 @@ const Skills = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: isSwiping ? 0.5 : 1 }}
         transition={{ duration: 0.5 }}
-        className=" ml-[-4rem]  absolute top-[121rem] md:top-[81rem]"
+        className=" ml-[-4rem]  absolute top-[117rem] md:top-[72rem]"
       >
         <div className="mt-8 text-gray-100 text-center">
           <h3 className="text-4xl font-semibold">

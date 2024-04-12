@@ -78,7 +78,7 @@ const Project = () => {
     <motion.div className="relative p-16" id="Project">
       <motion.div
         id="projects"
-        className="text-white absolute md:top-[123rem] xl:top-[130rem] top-[205rem]"
+        className="text-white absolute md:top-[123rem] xl:top-[97rem] top-[205rem]"
       >
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -87,15 +87,16 @@ const Project = () => {
           className="text-center"
         >
           <h3 className="text-4xl font-semibold">
-            My{" "}
-            <span className="md:mr-[28rem] xl:mr-0 text-white">Projects</span>
+            <span className="md:ml-[-35rem] xl:ml-[-10rem] text-white">
+              My Projects
+            </span>
           </h3>
-          <p className="text-gray-400 mt-3 text-lg md:mr-[28rem] xl:mr-0">
+          <p className="text-gray-400 mt-3 xl:ml-[-10rem] text-lg md:ml-[-35rem] xl:mr-0">
             My awesome works
           </p>
         </motion.div>
         <br />
-        <div className="flex max-w-6xl gap-6 px-5 mx-auto items-center relative ml-4">
+        <div className="flex max-w-7xl gap-6 px-5 mx-auto items-center relative ">
           <motion.div
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}

@@ -11,7 +11,7 @@ const About = () => {
 
   useEffect(() => {
     const handleScroll = (event) => {
-      if (event.deltaY > 0) {
+      if (event.delaY > 0) {
         setIsSwiping(true);
       } else {
         setIsSwiping(false);
@@ -35,11 +35,11 @@ const About = () => {
       >
         <div>
           <h3 className="text-4xl font-semibold md:text-center">
-            <span className="text-gray-100 m-3 xl:ml-[16rem] ml-[-10rem]">
+            <span className="text-gray-100  xl:ml-[16rem] ml-[-6rem]">
               About Me
             </span>
           </h3>
-          <p className="text-gray-400 mt-3 ml-[-10rem] md:text-center text-lg xl:ml-[16rem]">
+          <p className="text-gray-400 mt-3 ml-[-6rem] md:text-center text-lg xl:ml-[16rem]">
             My knowledge
           </p>
         </div>

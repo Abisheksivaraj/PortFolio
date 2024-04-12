@@ -60,7 +60,7 @@ const Navbar = () => {
               to="Skills"
               spy={true}
               smooth={true}
-              offset={1200}
+              offset={1000}
               duration={500}
               className="hover:text-[#f98d2f] cursor-pointer"
             >
@@ -72,8 +72,9 @@ const Navbar = () => {
               to="Project"
               spy={true}
               smooth={true}
-              offset={1930}
+              offset={1400}
               duration={500}
+              
               className="hover:text-[#f98d2f] cursor-pointer"
             >
               Projects
@@ -84,7 +85,7 @@ const Navbar = () => {
               to="Contact"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={0}
               duration={500}
               className="hover:text-[#f98d2f] cursor-pointer"
             >
