@@ -75,10 +75,10 @@ const Project = () => {
     },
   ];
   return (
-    <motion.div className="relative p-16" id="Project">
+    <motion.div className="relative p-24 md:p-16" id="Project">
       <motion.div
         id="projects"
-        className="text-white absolute md:top-[123rem] xl:top-[97rem] top-[205rem]"
+        className="text-white absolute md:top-[110rem] xl:top-[92rem] top-[205rem]"
       >
         <motion.div
           initial={{ opacity: 0, y: -50 }}

@@ -59,7 +59,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="relative p-16" id="Skills">
+    <div className="relative p-14 md:p-24" id="Skills">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: isSwiping ? 0.5 : 1 }}

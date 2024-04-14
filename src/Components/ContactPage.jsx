@@ -44,7 +44,7 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="p-16 absolute top-[251rem] md:top-[172rem] xl:top-[148rem] xl:ml-[14rem]"
+      className="p-16 absolute top-[251rem] md:top-[165rem] xl:top-[146rem] xl:ml-[23rem]"
       id="Contact"
     >
       <motion.div
@@ -61,7 +61,7 @@ const ContactPage = () => {
         initial={{ opacity: 0, x: -500 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
-        className="flex flex-col md:flex-row items-center justify-start gap-[7rem] ml-[-1rem]  xl:ml-[-11rem]"
+        className="flex flex-col md:flex-row items-center justify-start gap-[8rem] ml-[-1rem]  xl:ml-[-11rem]"
       >
         <Hubspot />
 
@@ -94,15 +94,15 @@ const ContactPage = () => {
       </motion.div>
 
       <motion.div className="">
-        <ul className="text-[#f98d2f] flex flex-row md:flex-row items-center justify-center gap-[3rem]  mt-10 md:mt-[4rem] ml-[-14rem] md:ml-[-1rem] xl:ml-[-9rem]">
+        <ul className="text-[#f98d2f] flex flex-row md:flex-row items-center justify-center gap-[3rem]  mt-10 md:mt-[2rem] ml-[-8rem] md:ml-[-1rem] xl:ml-[-9rem]">
           <li>
             <a href="">
-              <FaFacebookF className="h-[2.5rem] w-[2.5rem] hover:text-[white]" />
+              <FaFacebookF className="h-[2.5rem] w-[2.5rem] hidden md:block hover:text-[white]" />
             </a>
           </li>
           <li>
             <a href="https://x.com/Abishek_2601?t=mgUDd_xMIzprwKOzyrD8yg&s=09">
-              <FaTwitter className="h-[2.5rem] w-[2.5rem] hover:text-[white]" />
+              <FaTwitter className="h-[2.5rem] w-[2.5rem] hidden md:block hover:text-[white]" />
             </a>
           </li>
           <li>
