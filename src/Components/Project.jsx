@@ -8,6 +8,7 @@ import project4 from "../assets/Projects/ImageSlider.png";
 import project5 from "../assets/Projects/MovieHub.png";
 import project6 from "../assets/Projects/RockPaperScissor.png";
 import project7 from "../assets/Projects/TurboCarRental.png";
+import project8 from "../assets/Projects/Portfolio.png"
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -32,44 +33,50 @@ const Project = () => {
   }, []);
   const projects = [
     {
+      img: project8,
+      name: "Portfolio (React)",
+      github_link: "https://github.com/Abisheksivaraj/PortFolio",
+      live_link: "https://portfolio-abishek.netlify.app/",
+    },
+    {
       img: project2,
-      name: "ChatApp",
+      name: "ChatApp (React)",
       github_link: "https://github.com/Abisheksivaraj/chatapp",
       live_link: "https://tangerine-cobbler-baf4b6.netlify.app/",
     },
     {
       img: project5,
-      name: "MovieHub",
+      name: "MovieHub (React)",
       github_link: "https://github.com/Abisheksivaraj/movie",
       live_link: "https://flourishing-dieffenbachia-ae2b6b.netlify.app/",
     },
     {
       img: project3,
-      name: "Expense Tracker",
+      name: "Expense Tracker (JavaScript)",
       github_link: "https://github.com/Abisheksivaraj/expense-tracker",
       live_link: "https://peppy-salamander-350750.netlify.app/",
     },
     {
       img: project6,
-      name: "Rock Paper Scissor",
+      name: "Rock Paper Scissor (JavaScript)",
       github_link: "https://github.com/Abisheksivaraj/rock-paper-scissor",
       live_link: "https://animated-tulumba-6c04e2.netlify.app/",
     },
     {
       img: project1,
-      name: "Calculator",
+      name: "Calculator (JavaScript)",
       github_link: "https://github.com/Abisheksivaraj/calculator",
       live_link: "https://heroic-cajeta-8387ac.netlify.app/",
     },
     {
       img: project7,
-      name: "Turbo Car Rental",
+      name: "Turbo Car Rental (Html & CSS)",
       github_link: "https://github.com/Abisheksivaraj/turbo-project",
       live_link: "https://fantastic-fairy-26b005.netlify.app/",
     },
     {
       img: project4,
-      name: "Image Slider",
+      name: "Image Slider (JavaScript)",
       github_link: "https://github.com/Abisheksivaraj/image-slider",
       live_link: "https://gant-fairy-cbdf6b.netlify.app/",
     },
